@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+     <!-- 카카오톡/SNS 공유 설정 (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="이우석 전자 명함">
+    <meta property="og:description" content="CRYPT WATER | Pre-order">
+   <meta property="og:image" content="https://be-nice-girl.github.io/crypto-water-ws/or_image_ws.jpg">
+ 
+    <!-- ↑ 위 og:image 부분에 본인이 원하는 공유용 이미지 주소를 넣으세요. 비율은 2:1 권장 -->    
+    
+    <title>Crypto-water Business Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #0f172a;
+            color: #ffffff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .phone-container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #000000;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .profile-bg {
+            height: 450px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,1) 100%),
+                url('./ws_bg.gif'); /* 메인 테마 이미지 */
+           
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 명함 플로팅 카드 (Glassmorphism) */
+        .name-card {
+            position: absolute;
+            top: 360px;
+            left: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .info-section {
+            margin-top: 80px;
+            padding: 0 24px 40px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            padding: 18px 0;
+            border-bottom: 1px solid #222;
+            transition: all 0.3s;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            background: #1e293b;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 16px;
+            color: #3b82f6;
+        }
+
+        .btn-action {
+            width: 100%;
+            background: #3b82f6;
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 30px;
+            display: block;
+            transition: opacity 0.2s;
+        }
+
+        .btn-action:active {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="phone-container">
+        <!-- 상단 이미지 배경 -->
+        <div class="profile-bg"></div>
+
+        <!-- 성함 카드 -->
+        <div class="name-card">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h1 class="text-2xl font-bold text-white mb-1">Woo Seok Lee</h1>
+                    <p class="text-blue-400 text-sm font-medium tracking-wider">CRYPTO-WATER</p>
+                </div>
+                <div class="w-16 h-16">
+                    <img src="img/crypto-water.png" alt="">
+                </div>
+            </div>
+            <div class="mt-4 flex gap-2">
+                <span class="text-[10px] bg-blue-500/20 text-blue-300 px-2 py-1 rounded">Limited edition</span>
+                <span class="text-[10px] bg-blue-500/20 text-blue-300 px-2 py-1 rounded">Bitcoin Promotion</span>
+            </div>
+        </div>
+
+        <!-- 상세 정보 섹션 -->
+        <div class="info-section">
+            <div class="info-item">
+                <div class="icon-box">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="text-gray-500 text-xs mb-1">Mobile</p>
+                    <p class="text-white font-medium">+82 10 - 3655 - 5017</p>
+                </div>
+                <button onclick="copyText('010-3655-5017')" class="text-gray-400 hover:text-white">
+                    <i class="far fa-copy"></i>
+                </button>
+            </div>
+
+            <div class="info-item">
+                <div class="icon-box">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="text-gray-500 text-xs mb-1">Website</p>
+                    <a href="https://www.crypto-water.com" target="_blank" class="text-white font-medium">www.crypto-water.com</a>
+                </div>
+                <i class="fas fa-external-link-alt text-gray-600 text-xs"></i>
+            </div>
+
+            <!-- 하단 소개 문구 -->
+            <div class="mt-8 text-gray-400 text-sm leading-relaxed">
+                <p class="mb-2">This is more than just hydration—</p>
+                <p class="text-xs opacity-70">it is a liquid innovation of the blockchain ecosystem. Pre-orders for Crypto-Water are now live.</p>
+            </div>
+
+            <!-- 전화 걸기 버튼 -->
+            <a href="tel:01036555017" class="btn-action">Call now</a>
+        </div>
+
+        <!-- 복사 알림창 (Custom Toast) -->
+        <div id="toast" class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-white text-black px-6 py-3 rounded-full font-bold text-sm hidden shadow-xl">
+            번호가 복사되었습니다!
+        </div>
+    </div>
+
+    <script>
+        function copyText(text) {
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            const toast = document.getElementById('toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
